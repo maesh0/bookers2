@@ -1,0 +1,44 @@
+<div class="col-md-3">
+<div class="row">
+
+<table class="table table-user">
+  <h2>User info</h2>
+  <thred>
+    <tr>
+      <% if @user.profile_image.attached? %>
+        <%= image_tag @user.profile_image,size: "100x100" %>
+      <% else %>
+        <%= image_tag "no_image.jpg",size: "100x100" %>
+      <% end %>
+    </tr>
+  </thred>
+  <tbody>
+    <tr>
+      <th>Name</th>
+      <th><%= user.name %></th>
+    <tr>
+      <th>Introduction</th>
+      <th><%= user.introduction %></th>
+    </tr>
+    <tr>
+      <th colspan="2">
+       <div class="row">
+        <div class="border border-dark rounded" style="padding:0px 40%">
+
+
+          <%= link_to edit_user_path(user.id), class: "btn btn-white text-dark",method: :get do %>
+            <i class="fas fa-user-cog"></i>
+          <% end %>
+
+
+
+
+        </div>
+       </div>
+      </th>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+</div>
